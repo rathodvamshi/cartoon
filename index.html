@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoon Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Light background for better contrast */
+        }
+
+        .logo {
+            width: 80px; /* Adjust logo size */
+            height: 80px; /* Maintain aspect ratio */
+        }
+
+        header {
+            border-bottom: 1px solid #ddd; /* Add a bottom border for definition */
+        }
+
+        .nav-link {
+            color: #333; /* Change link color */
+            padding: 10px 15px; /* Add padding for links */
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+
+        .nav-link:hover {
+            background-color: #e9ecef; /* Light grey on hover */
+            border-radius: 5px; /* Rounded corners on hover */
+        }
+
+        .image-slider {
+            position: relative;
+            overflow: hidden; /* Hide overflow for images */
+            max-height: 400px; /* Set max height for slider */
+        }
+
+        .slider-image {
+            width: 100%; /* Make images responsive */
+            height: 600px; /* Maintain aspect ratio */
+            display: none; /* Hide all images by default */
+        }
+
+        .slider-image.active {
+            display: block; /* Show the active image */
+        }
+
+        .cartoon-card {
+            border: 2px solid #ddd; /* Add border to the card */
+            border-radius: 20px; /* Round corners */
+            height: 300px;
+            overflow: hidden; /* Hide overflow */
+            background-color: #fff; /* White background for cards */
+            transition: transform 0.3s; /* Animation for hover effect */
+        }
+
+        .cartoon-card:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        footer {
+            border-top: 1px solid #ddd; /* Add a top border to footer */
+        }
+
+        footer a {
+            display: block; /* Stack links */
+            margin: 5px 0; /* Margin between links */
+            color: #007bff; /* Bootstrap primary color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light">
+        <div class="d-flex align-items-center">
+            <img src="https://i.pinimg.com/control/564x/39/8f/3f/398f3fd9437aba2212247724eb2ffe62.jpg" alt="Logo" class="logo" style="border-radius: 10px;">
+            <h1 class="ml-2">Cartoon</h1>
+        </div>
+        <nav class="d-flex">
+            <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="home" class="mt-4">
+        <div class="image-slider">
+            <img src="https://i.pinimg.com/736x/13/66/b1/1366b1f86b99a1bfc6828e595ac5f7e2.jpg" alt="Cartoon 1" class="slider-image active">
+            <img src="https://i.pinimg.com/736x/90/f4/eb/90f4ebd04683de1f96228f1501020b22.jpg" alt="Cartoon 2" class="slider-image">
+            <img src="https://i.pinimg.com/control/564x/bf/ef/2b/bfef2b89ecc7a5684a843dcd88321c99.jpg" alt="Cartoon 3" class="slider-image">
+        </div>
+
+        <div class="mt-4">
+            <h2>Select a Cartoon</h2>
+            <div class="row">
+                <a href="./Doraemon.html" class="col-md-4">
+                    <div class="cartoon-card">
+                        <iframe src="https://www.youtube.com/embed/y2jHaMzHHJc?si=9p2zWzyK1nZSjuAV"
+                            title="YouTube video player" frameborder="0" width="100%" height="250px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p style="text-align: center;  justify-self: center;">Doraemon</p>
+                    </div>
+                </a>
+                <a href="./Shinchan.html" class="col-md-4">
+                    <div class="cartoon-card">
+                        <iframe src="https://www.youtube.com/embed/kMI4FYv1gl4?si=8mzPo5JQMdRQmSn6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen width="100%" height="250px"></iframe>
+                        <p style="text-align: center;  justify-self: center;">Shinchan</p>
+                    </div>
+                </a>
+                <a href="./Mickey.html" class="col-md-4">
+                    <div class="cartoon-card">
+                        <iframe src="https://www.youtube.com/embed/57oU-xqiXek?si=5cZZ7d45Cg2KRgp2"
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen width="100%" height="250px"></iframe>
+                        <p style="text-align: center;  justify-self: center;">Mickey Mouse</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="about" class="bg-light text-center p-4">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h3>About Us</h3>
+                <p>Information about the cartoon page.</p>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>Follow us on:</p>
+                <a href="https://www.instagram.com/_rathod_369/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com" target="_blank">YouTube</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript for the image slider
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider-image');
+        const totalImages = images.length;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active'); // Remove active class from all images
+                if (i === index) {
+                    img.classList.add('active'); // Add active class to the current image
+                }
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % totalImages; // Increment index, loop back to 0
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+
+</html>

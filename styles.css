@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+.logo {
+    width: 80px; /* Adjust logo size */
+    height: 80px; /* Maintain aspect ratio */
+}
+
+header {
+    border-bottom: 1px solid #ddd; /* Add a bottom border for definition */
+}
+
+.nav-link {
+    color: #333; /* Change link color */
+    padding: 10px 15px; /* Add padding for links */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.nav-link:hover {
+    background-color: #e9ecef; /* Light grey on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+.image-slider {
+    position: relative;
+    overflow: hidden; /* Hide overflow for images */
+    max-height: 400px; /* Set max height for slider */
+}
+
+.slider-image {
+    width: 100%; /* Make images responsive */
+    height: 500px; /* Maintain aspect ratio */
+    display: none; /* Hide all images by default */
+}
+
+.slider-image.active {
+    display: block; /* Show the active image */
+}
+
+.cartoon-card {
+    border: 2px solid #ddd; /* Add border to the card */
+    border-radius: 20px; /* Round corners */
+    height: 300px;
+    overflow: hidden; /* Hide overflow */
+    background-color: #fff; /* White background for cards */
+    transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.cartoon-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+footer {
+    border-top: 1px solid #ddd; /* Add a top border to footer */
+}
+
+footer a {
+    display: block; /* Stack links */
+    margin: 5px 0; /* Margin between links */
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
