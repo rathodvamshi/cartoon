@@ -9,8 +9,16 @@ body {
 }
 
 header {
-    border-bottom: 1px solid #ddd; /* Add a bottom border for definition */
+    position: fixed; /* Keep the header fixed */
+    top: 0; /* Align it at the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    border-bottom: 1px solid #ddd; /* Optional: Keeps the border */
 }
+section#home {
+    margin-top: 100px; /* Adjust this value based on the height of the header */
+}
+
 
 .nav-link {
     color: #333; /* Change link color */
@@ -26,12 +34,12 @@ header {
 .image-slider {
     position: relative;
     overflow: hidden; /* Hide overflow for images */
-    max-height: 400px; /* Set max height for slider */
+    max-height: 500px; /* Set max height for slider */
 }
 
 .slider-image {
     width: 100%; /* Make images responsive */
-    height: 500px; /* Maintain aspect ratio */
+    height: 700px; /* Maintain aspect ratio */
     display: none; /* Hide all images by default */
 }
 
@@ -40,6 +48,9 @@ header {
 }
 
 .cartoon-card {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     border: 2px solid #ddd; /* Add border to the card */
     border-radius: 20px; /* Round corners */
     height: 300px;

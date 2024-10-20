@@ -1,24 +1,12 @@
+// Automatic image slider
 let currentIndex = 0;
 const images = document.querySelectorAll('.slider-image');
-const totalImages = images.length;
 
-// Function to show the current image
-function showImage(index) {
-    images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-            img.classList.add('active');
-        }
-    });
+function showNextImage() {
+    images[currentIndex].classList.remove('active'); // Hide current image
+    currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+    images[currentIndex].classList.add('active'); // Show the next image
 }
 
-// Function to go to the next image
-function nextImage() {
-    currentIndex = (currentIndex + 1) % totalImages; // Loop back to start
-    showImage(currentIndex);
-}
-
-// Start the slider
-showImage(currentIndex);
-setInterval(nextImage, 3000); // Change image every 3 seconds
-
+// Set interval for image change (e.g., every 3 seconds)
+setInterval(showNextImage, 3000);

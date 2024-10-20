@@ -17,8 +17,10 @@
 header {
     background-color: #f8f9fa;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
+/* Navigation link styling */
 .nav-link {
     margin-right: 15px;
     color: #333;
@@ -32,6 +34,10 @@ header {
 }
 
 /* Characters Section */
+section {
+    margin-top: 10px;
+}
+
 .characters-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -39,26 +45,39 @@ header {
     gap: 20px;
 }
 
+/* Character Card Styling */
 .character-card {
-    width: 200px;
-    text-align: center;
+    color: rgb(104, 220, 209);
+    width: 500px;  /* Increased the card width */
+    display: flex; /* Use flexbox for side-by-side layout */
+    align-items: center; /* Align items vertically centered */
     background-color: #f1f1f1;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    gap: 25px; /* Space between image and text */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .character-card img {
-    width: 100%;
-    height: auto;
+    width: 150px;  /* Adjusted image width */
+    height: 200px;
     border-radius: 10px;
 }
 
+.character-card div {
+    text-align: left; /* Align text to the left */
+}
+
 .character-card p {
-    margin-top: 10px;
-    font-size: 1.2rem;
+    margin: 5px 0;
+    font-size: 1.1rem;
     font-weight: bold;
+}
+
+.character-description {
+    font-size: 1rem;
+    color: #393838;
 }
 
 .character-card:hover {
@@ -68,19 +87,19 @@ header {
 
 /* Footer styling */
 footer {
-    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    margin-top: 20px;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-footer h3 {
-    margin-bottom: 10px;
-}
-
 footer a {
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: none;
+    display: block;
+    margin: 5px 0;
     color: #007bff;
+    text-decoration: none;
 }
 
 footer a:hover {

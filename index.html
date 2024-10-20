@@ -11,38 +11,47 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Light background for better contrast */
+            background-color: #f9f9f9;
+            overflow-x: hidden; /* Remove horizontal scrollbar */
         }
 
         .logo {
-            width: 80px; /* Adjust logo size */
-            height: 80px; /* Maintain aspect ratio */
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
         }
 
         header {
-            border-bottom: 1px solid #ddd; /* Add a bottom border for definition */
+            position: fixed; /* Fixed header */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Ensure it's above other content */
+            border-bottom: 1px solid #ddd;
+            background-color: white; /* Make header background white */
         }
 
         .nav-link {
-            color: #333; /* Change link color */
-            padding: 10px 15px; /* Add padding for links */
-            transition: background-color 0.3s; /* Transition for hover effect */
+            color: #333;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
         }
 
         .nav-link:hover {
-            background-color: #e9ecef; /* Light grey on hover */
-            border-radius: 5px; /* Rounded corners on hover */
+            background-color: #e9ecef;
+            border-radius: 5px;
         }
 
         .image-slider {
             position: relative;
-            overflow: hidden; /* Hide overflow for images */
-            max-height: 400px; /* Set max height for slider */
+            overflow: hidden;
+            max-height: 400px;
+            margin-top: 100px; /* Add margin to push content below the fixed header */
         }
 
         .slider-image {
-            width: 100%; /* Make images responsive */
-            height: 600px; /* Maintain aspect ratio */
+            width: 100%;
+            height: 600px;
             display: none; /* Hide all images by default */
         }
 
@@ -51,39 +60,86 @@
         }
 
         .cartoon-card {
-            border: 2px solid #ddd; /* Add border to the card */
-            border-radius: 20px; /* Round corners */
+            border: 2px solid #ddd;
+            border-radius: 20px;
             height: 300px;
-            overflow: hidden; /* Hide overflow */
-            background-color: #fff; /* White background for cards */
-            transition: transform 0.3s; /* Animation for hover effect */
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s;
         }
 
         .cartoon-card:hover {
-            transform: scale(1.05); /* Scale up on hover */
+            transform: scale(1.05);
         }
 
         footer {
-            border-top: 1px solid #ddd; /* Add a top border to footer */
+            border-top: 1px solid #ddd;
+            background-color: black; /* Change footer background color to black */
+            color: white; /* Change footer text color to white */
+            padding: 20px 0; /* Add padding for better spacing */
         }
 
         footer a {
-            display: block; /* Stack links */
-            margin: 5px 0; /* Margin between links */
+            display: block;
+            margin: 5px 0;
             color: #007bff; /* Bootstrap primary color */
-            text-decoration: none; /* Remove underline */
+            text-decoration: none;
         }
 
         footer a:hover {
-            text-decoration: underline; /* Underline on hover */
+            text-decoration: underline;
+        }
+
+        .social-icons i {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #007bff; /* Bootstrap primary color */
+            transition: color 0.3s;
+        }
+
+        .social-icons i:hover {
+            color: #0056b3; /* Darker shade on hover */
+        }
+
+        /* Styling for the side by side layout */
+        .side-by-side {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .side-by-side .col {
+            flex: 1;
+            margin-right: 10px; /* Add some space between columns */
+        }
+
+        .side-by-side .col:last-child {
+            margin-right: 0; /* Remove margin from the last column */
+        }
+
+        /* Responsive design adjustments */
+        @media (max-width: 768px) {
+            .side-by-side {
+                flex-direction: column; /* Stack columns on smaller screens */
+            }
+
+            .side-by-side .col {
+                margin-right: 0; /* Remove margin */
+                margin-bottom: 20px; /* Add margin below each column */
+            }
+
+            .side-by-side .col:last-child {
+                margin-bottom: 0; /* Remove margin from the last column */
+            }
         }
     </style>
 </head>
 
 <body>
-    <header class="d-flex justify-content-between align-items-center p-3 bg-light">
+    <header class="d-flex justify-content-between align-items-center p-3">
         <div class="d-flex align-items-center">
-            <img src="https://i.pinimg.com/control/564x/39/8f/3f/398f3fd9437aba2212247724eb2ffe62.jpg" alt="Logo" class="logo" style="border-radius: 10px;">
+            <img src="https://i.pinimg.com/564x/39/8f/3f/398f3fd9437aba2212247724eb2ffe62.jpg" 
+                 alt="Logo" class="logo">
             <h1 class="ml-2">Cartoon</h1>
         </div>
         <nav class="d-flex">
@@ -95,81 +151,90 @@
 
     <section id="home" class="mt-4">
         <div class="image-slider">
-            <img src="https://i.pinimg.com/736x/13/66/b1/1366b1f86b99a1bfc6828e595ac5f7e2.jpg" alt="Cartoon 1" class="slider-image active">
-            <img src="https://i.pinimg.com/736x/90/f4/eb/90f4ebd04683de1f96228f1501020b22.jpg" alt="Cartoon 2" class="slider-image">
-            <img src="https://i.pinimg.com/control/564x/bf/ef/2b/bfef2b89ecc7a5684a843dcd88321c99.jpg" alt="Cartoon 3" class="slider-image">
+            <img src="https://i.pinimg.com/564x/21/8f/bb/218fbb2bfa7e6ddb9f5b46a666990c69.jpg" 
+                 alt="Cartoon 1" class="slider-image active">
+            <img src="https://i.pinimg.com/736x/90/f4/eb/90f4ebd04683de1f96228f1501020b22.jpg" 
+                 alt="Cartoon 2" class="slider-image">
+            <img src="https://i.pinimg.com/564x/62/67/9d/62679dad976a75c7d204ca9e19392f09.jpg" 
+                 alt="Cartoon 3" class="slider-image">
         </div>
-
         <div class="mt-4">
             <h2>Select a Cartoon</h2>
             <div class="row">
                 <a href="./Doraemon.html" class="col-md-4">
                     <div class="cartoon-card">
-                        <iframe src="https://www.youtube.com/embed/y2jHaMzHHJc?si=9p2zWzyK1nZSjuAV"
-                            title="YouTube video player" frameborder="0" width="100%" height="250px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p style="text-align: center;  justify-self: center;">Doraemon</p>
+                        <iframe src="https://www.youtube.com/embed/y2jHaMzHHJc" 
+                                width="100%" height="250" allowfullscreen></iframe>
+                        <p class="text-center">Doraemon</p>
                     </div>
                 </a>
                 <a href="./Shinchan.html" class="col-md-4">
                     <div class="cartoon-card">
-                        <iframe src="https://www.youtube.com/embed/kMI4FYv1gl4?si=8mzPo5JQMdRQmSn6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen width="100%" height="250px"></iframe>
-                        <p style="text-align: center;  justify-self: center;">Shinchan</p>
+                        <iframe src="https://www.youtube.com/embed/kMI4FYv1gl4" 
+                                width="100%" height="250" allowfullscreen></iframe>
+                        <p class="text-center">Shinchan</p>
                     </div>
                 </a>
                 <a href="./Mickey.html" class="col-md-4">
                     <div class="cartoon-card">
-                        <iframe src="https://www.youtube.com/embed/57oU-xqiXek?si=5cZZ7d45Cg2KRgp2"
-                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen width="100%" height="250px"></iframe>
-                        <p style="text-align: center;  justify-self: center;">Mickey Mouse</p>
+                        <iframe src="https://www.youtube.com/embed/57oU-xqiXek" 
+                                width="100%" height="250" allowfullscreen></iframe>
+                        <p class="text-center">Mickey Mouse</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer id="about" class="bg-light text-center p-4">
-        <div class="d-flex justify-content-between">
-            <div>
-                <h3>About Us</h3>
-                <p>Information about the cartoon page.</p>
+
+    <footer id="footer" class="p-3 text-center">
+        <section id="about" class="mt-5">
+            <div class="container">
+                <div class="side-by-side">
+                    <div class="col">
+                        <h3>About Us</h3>
+                        <p>Welcome to our Cartoon Page, a place where you can relive your childhood memories with your favorite cartoons! 
+                        Our mission is to bring joy and laughter to people of all ages by showcasing beloved animated characters and their adventures. 
+                        From timeless classics to modern favorites, we curate content that sparks nostalgia and entertainment. 
+                        Join us on this colorful journey as we explore the wonderful world of cartoons!</p>
+                    </div>
+                    <div class="col" style="margin-left: 100px;">
+                        <h3>Contact Us</h3>
+                        <p>If you have any questions, feedback, or suggestions, feel free to reach out to us:</p>
+                        <p>Email: <a href="cartoons@234.com">contact@cartoonpage.com</a></p>
+                        <div class="social-icons" style="display: flex; margin-left: 210px;">
+                            <a href="https://www.instagram.com/_rathod_369/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3>Contact Us</h3>
-                <p>Follow us on:</p>
-                <a href="https://www.instagram.com/_rathod_369/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com" target="_blank">YouTube</a>
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-            </div>
-        </div>
+        </section>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
-        // JavaScript for the image slider
-        let currentIndex = 0;
+        document.querySelector('.nav-link[href="#about"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.querySelector('.nav-link[href="#contact"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Image Slider
         const images = document.querySelectorAll('.slider-image');
-        const totalImages = images.length;
+        let currentIndex = 0;
 
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.remove('active'); // Remove active class from all images
-                if (i === index) {
-                    img.classList.add('active'); // Add active class to the current image
-                }
-            });
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
         }
 
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % totalImages; // Increment index, loop back to 0
-            showImage(currentIndex);
-        }
-
-        setInterval(nextImage, 3000); // Change image every 3 seconds
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
     </script>
 </body>
 
